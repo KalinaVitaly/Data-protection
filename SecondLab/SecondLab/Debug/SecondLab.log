@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\Kalina\Desktop\Data-protection\SecondLab\SecondLab\Source.cpp(104,30): warning C4244: аргумент: преобразование "unsigned __int64" в "unsigned int", возможна потеря данных
+C:\Users\Kalina\Desktop\Data-protection\SecondLab\SecondLab\Source.cpp(133,9): warning C4244: return: преобразование "double" в "unsigned __int64", возможна потеря данных
+  SecondLab.vcxproj -> C:\Users\Kalina\Desktop\Data-protection\SecondLab\Debug\SecondLab.exe

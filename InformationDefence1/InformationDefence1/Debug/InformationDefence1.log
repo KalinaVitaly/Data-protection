@@ -1,3 +1,0 @@
-﻿  Source.cpp
-C:\Users\Kalina\Desktop\InformationDefence\InformationDefence1\InformationDefence1\Source.cpp(50,48): warning C4267: аргумент: преобразование из "size_t" в "const char"; возможна потеря данных
-  InformationDefence1.vcxproj -> C:\Users\Kalina\Desktop\InformationDefence\InformationDefence1\Debug\InformationDefence1.exe
