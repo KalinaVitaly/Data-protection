@@ -9,18 +9,7 @@ int EFunction(int f);
 std::vector<bool> PrimeNumbers(int n);
 int EuclidAlgorithm(int a, int b);
 int DFind(int f, int e);
-int ReEncryptionSymbol(int number, int power, int n)
-{
-	unsigned long long res = 1;
-	while (power)
-	{
-		if (power % 2)
-			res = (res * number) % n;
-		number = (number * number) % n;
-		power /= 2;
-	}
-	return res;
-}
+int POW_MOD(int number, int power, int n);
 
 
 int main() {
@@ -30,23 +19,31 @@ int main() {
 	int mod = -1;
 	int e = -1;
 	int d = -1;
-	int data = 98;
-	std::string data_number;
+	std::string data;
 	std::string reEncriptionData = "";
 	std::vector<int> encriptionDataCode;
 
 	mod = MOD(p, q);
 	f = EulerFunction(p, q);
 	e = EFunction(f);
-
-	std::cout << data << std::endl;
-
 	d = DFind(f, e);
-	std::cout << "E: " << e << std::endl;
-	std::cout << "D: " << d << std::endl;
-	data = ReEncryptionSymbol(data, e, mod);
-	std::cout << "Encryption: " << data << std::endl;
-	std::cout << "Reencryption: " << ReEncryptionSymbol(data, d, mod) << std::endl;
+
+	std::cout << "Enter mesage: ";
+	std::cin >> data;
+
+	for (auto i : data)
+	{
+		encriptionDataCode.push_back(POW_MOD(i, e, mod));
+		std::cout << POW_MOD(i, e, mod) << " ";
+	}
+
+	std::cout << std::endl;
+
+	for (int i : encriptionDataCode)
+	{
+		reEncriptionData += static_cast<char>(POW_MOD(i, d, mod));
+	}
+	std::cout << "Reencryption: " << reEncriptionData << std::endl;
 	
 	return 0;
 }
@@ -109,4 +106,17 @@ int DFind(int f, int e) {
 	}
 
 	return d;
+}
+
+int POW_MOD(int number, int power, int n)
+{
+	unsigned long long res = 1;
+	while (power)
+	{
+		if (power % 2)
+			res = (res * number) % n;
+		number = (number * number) % n;
+		power /= 2;
+	}
+	return res;
 }
